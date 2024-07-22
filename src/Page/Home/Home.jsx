@@ -52,7 +52,7 @@ const Home =() =>{
   }
 
   const FindIdHotel=(hotel) =>{
-		return hotel.id_hotel ==23
+		return hotel.id_hotel ==6
 	}
 	
 	const hotel = hotelList.find(FindIdHotel)
@@ -224,14 +224,14 @@ const subtotal = getCartSubtotal()
 
 
     const rooms = [
-      {title: 'Room Sencilla', price:380000 , image:"https://grupo-hoteles.com/storage/app/23/rooms/1904843090-83-rooms-slider-2-IMG_5980.jpeg", 
+      {title: 'Room Deluxe', price:210000 , image:"https://grupo-hoteles.com/storage/app/6/rooms/1843848947-16-rooms-slider-1-hotel-cartagena-dc-economico-habitacion-delux-principal-1.webp", 
         features: ['Cama matrimonial', 'Baño privado con ducha', 'Wi-Fi gratuito', 'Smart TV',"Aire Acondicionado"] },
-      {title: 'Room Ventana',price:420000, image: "https://grupo-hoteles.com/storage/app/23/rooms/682184610-84-rooms-slider-1-IMG_9576.JPG", 
+      {title: 'Room Clasica',price:170000, image: "https://grupo-hoteles.com/storage/app/6/rooms/1068378615-14-rooms-slider-1-_MG_1836.jpg", 
         features: ['Cama matrimonial', 'Baño privado con ducha', 'Wi-Fi gratuito', 'Smart TV',"Aire Acondicionado"] },
-      {title: 'Room VIP Jacuzzi',price:700000, image: "https://grupo-hoteles.com/storage/app/23/rooms/1573050561-85-rooms-slider-1-IMG_9879.JPG", 
-        features: ['Cama matrimonial', 'Baño privado con ducha', 'Wi-Fi gratuito', 'Smart TV','Aire Acondicionado',"Jacuzzi"]},
-      {title: 'Room Balcón Calle',price:500000, image: "https://grupo-hoteles.com/storage/app/23/rooms/1882808639-86-rooms-slider-1-IMG_0216.JPG", 
-       features: ['Cama matrimonial', 'Baño privado con ducha', 'Wi-Fi gratuito', 'Smart TV','Aire Acondicionado']},
+      {title: 'Room Grupal',price:300000, image: "https://grupo-hoteles.com/storage/app/6/rooms/799736975-17-rooms-slider-1-hotel-cartagena-dc-economico-habitacion-grupal-slider-principal-1.webp", 
+        features: ['Dos Cama', 'Baño privado con ducha', 'Wi-Fi gratuito', 'Smart TV','Aire Acondicionado']},
+      {title: 'Room VIP',price:190000, image: "https://grupo-hoteles.com/storage/app/6/rooms/1946295107-15-rooms-slider-1-_MG_1852.jpg", 
+       features: ['Cama matrimonial', 'Baño privado con ducha', 'Wi-Fi gratuito', 'Smart TV','Aire Acondicionado',"Jacuzzi "]},
      
     ];
 
@@ -316,8 +316,8 @@ const subtotal = getCartSubtotal()
           {FillContent}
            <Header  scrollToRoomSectionEvent={scrollToRoomSectionEvent}   />
               <div className="relative bg-cover bg-center h-[650px]" style={{ 
-                    backgroundImage: `url(https://grupo-hoteles.com/storage/app/23/page/1746688908-23-page-slider-1-_MG_4609-HDR.jpg)`,}}>
-                <div className="absolute inset-0 bg-black opacity-15"></div>
+                    backgroundImage: `url(https://github.com/rolandoto/image-pms/blob/main/_MG_4223.jpg?raw=true)`,}}>
+                <div className="absolute inset-0 bg-black opacity-50"></div>
                 <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white">
                     <h1 className="text-4xl md:text-6xl lg:text-6xl font-lora">
                       {loadingHotel ?"cargando " :hotel?.nombre}  
@@ -325,7 +325,7 @@ const subtotal = getCartSubtotal()
                     <p className="mt-2 text-base md:text-xl lg:text-3xl font-lora font-normal">
                         Más que un hotel, una experiencia artística
                     </p>
-                    <button className="mt-6 bg-black text-white px-6 py-3 rounded-lg hover:bg-black" onClick={scrollToRoomSection}>
+                    <button className="mt-6 bg-yellow-500 text-white px-6 py-3 rounded-lg hover:bg-yellow-500" onClick={scrollToRoomSection}>
                         Ver habitaciones
                     </button>
                 </div>

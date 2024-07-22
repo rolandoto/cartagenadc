@@ -69,8 +69,8 @@ const Cart = () => {
                 <h3 className="text-2xl font-lora   text-white">${subtotal.toLocaleString('es-CO')} cop</h3> {/* Update this line with the number of rooms */}
             </div>
             </div>
-            <button onClick={PostHotelByIdHotel} className=" Button-Search w-full rounded md:w-auto ml-0 md:ml-4 px-6 py-2 font-lora bg-white text-black">
-            Confirmar la reserva
+            <button onClick={PostHotelByIdHotel} className=" Button-Search w-full rounded md:w-auto ml-0 md:ml-4 px-6 py-2 font-lora bg-yellow-500 text-white">
+                    Confirmar la reserva
             </button>
       </div>
       

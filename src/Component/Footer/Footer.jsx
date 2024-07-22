@@ -16,7 +16,7 @@ const Footer =() =>{
                 <div className="mx-auto max-w-7xl p-4  flex flex-col md:flex-row justify-between items-start md:items-center">
                 <div className="flex">
                     <img
-                        src="https://github.com/rolandoto/image-pms/blob/main/Logos/Mesa%20de%20trabajo%204@2x.png?raw=true"
+                        src="https://github.com/rolandoto/image-pms/blob/main/Logos/Logo-de-Cartagena-DC.png?raw=true"
                         alt="Logo de Gallery Hotel" 
                         width="100" 
                         height="100"
@@ -27,9 +27,9 @@ const Footer =() =>{
                 <div>
                     <div className="">
                         <ul className="space-y-2">
-                            <li className="flex items-center"> <IconFaWhatsapp />+57 3007502313</li>
-                            <li className="flex items-center mr-6">  <IconsMdEmail />reservas@zelvanegra.co	 </li>
-                            <li className="flex items-center"> <IconFaMapMarkerAlt/>  Cra. 43B Cll. 10 - 38</li>
+                            <li className="flex items-center"> <IconFaWhatsapp /> +57 3217384929</li>
+                            <li className="flex items-center mr-6">  <IconsMdEmail />reservas@cartagenadc.com	</li>
+                            <li className="flex items-center"> <IconFaMapMarkerAlt/>Trans 54 #30B - 67</li>
                         </ul>
                     
                     </div>
@@ -66,7 +66,7 @@ const Footer =() =>{
                 <div className="text-center border-t-1  mx-auto max-w-7xl  text-black mt-8">
                     <div className=" flex  flex-col sm:flex-row  justify-between mt-8 mx-auto max-w-7xl items-center">
                             <div>
-                                Copyright © 2024 – All Rights Reserved Zelva Negra
+                                Copyright © 2024 – All Rights Reserved Cartagena DC
                             </div>
                                     <div className=" ">
                                     <div className="flex space-x-4">

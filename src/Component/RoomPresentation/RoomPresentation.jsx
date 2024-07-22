@@ -8,7 +8,7 @@ const RoomPresentaion =() =>{
         navigate("/Accomodation");
     }
 
-    return (  <div className="bg-[#bfbbbb99] py-12 px-4">
+    return (  <div className="bg-[#fffddf99] py-12 px-4">
                 <div className="container mx-auto max-w-7xl   flex flex-col md:flex-row items-center">
                 <div className="md:w-1/2 p-4 text-">
                     <h2 className="text-3xl font-normal text-center  text-black-700 text-[30px] font-lora ">Reserva tu habitación hoy mismo</h2>
@@ -22,7 +22,7 @@ const RoomPresentaion =() =>{
                 </div>
                 <div className="md:w-1/2 p-4">
                 <img 
-                    src="https://grupo-hoteles.com/storage/app/23/rooms/1286426263-85-rooms-slider-1-IMG_9866.JPG" 
+                    src="https://grupo-hoteles.com/storage/app/6/rooms/1843848947-16-rooms-slider-1-hotel-cartagena-dc-economico-habitacion-delux-principal-1.webp" 
                     alt="Reservation" 
                     width="600" 
                     height="400" 

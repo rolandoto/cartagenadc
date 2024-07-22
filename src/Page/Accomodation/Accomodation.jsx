@@ -56,7 +56,7 @@ const Accommodation = () => {
     const PostHotelByIdHotel = useCallback(async () => {
         setContextMenuPosition(false);
         setContextShowMenuPeople(false)
-        await getHotel({ id: 23, desde:formattedStartDate, hasta: formattedEndDate,counPeople:totalCountAdults });
+        await getHotel({ id: 6, desde:formattedStartDate, hasta: formattedEndDate,counPeople:totalCountAdults });
     }, [formattedStartDate,formattedEndDate,totalCountAdults]);
 
     useEffect(() =>{

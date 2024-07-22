@@ -17,7 +17,7 @@ const HeaderAccomodation =() =>{
     },[])
 
     const FindIdHotel=(hotel) =>{
-        return hotel.id_hotel ==23
+        return hotel.id_hotel ==6
     }
     
     const hotel = hotelList.find(FindIdHotel) 
@@ -34,8 +34,8 @@ const HeaderAccomodation =() =>{
     }
     
   
-    return ( <div className="relative bg-cover bg-center h-[450px]" style={{ backgroundImage: `url(https://grupo-hoteles.com/storage/app/23/page/1746688908-23-page-slider-1-_MG_4609-HDR.jpg)` }}>
-                <div className="absolute inset-0 bg-black opacity-15"></div>
+    return ( <div className="relative bg-cover bg-center h-[450px]" style={{ backgroundImage: `url(https://github.com/rolandoto/image-pms/blob/main/_MG_4223.jpg?raw=true)` }}>
+                <div className="absolute inset-0 bg-black opacity-50"></div>
                 <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white">
                 <h1 className="text-4xl md:text-6xl font-normal">{FillContent()}</h1>
                 <p className="mt-4 text-lg md:text-2xl font-normal">Termina de buscar tu habitación</p>

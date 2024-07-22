@@ -70,8 +70,8 @@ const DetailEvents =() =>{
     return (<>
                <Header/>
                <div className="relative bg-cover bg-center h-[410px]" style={{ 
-                backgroundImage: `url(https://grupo-hoteles.com/storage/app/23/page/1746688908-23-page-slider-1-_MG_4609-HDR.jpg)`,}}>
-                    <div className="absolute inset-0 bg-black opacity-15"></div>
+                backgroundImage: `url(https://github.com/rolandoto/image-pms/blob/main/_MG_4223.jpg?raw=true)`,}}>
+                    <div className="absolute inset-0 bg-black opacity-50"></div>
                     <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white">
                         <h1 className="text-4xl md:text-6xl lg:text-6xl font-lora">
                            Eventos
@@ -81,7 +81,7 @@ const DetailEvents =() =>{
 
                 {SearFindEvents ? 
                 <div className="mx-auto max-w-4xl p-6 mb-24">
-                    <h1 className="text-[30px] text-center text-black-700  font-lora  mb-6">{SearFindEvents.title}</h1>
+                    <h1 className="text-[30px] text-center text-yellow-500   font-lora  mb-6">{SearFindEvents.title}</h1>
                         <div className=" w-full p-4">
                             <img
                                     src={SearFindEvents.imageUrl}

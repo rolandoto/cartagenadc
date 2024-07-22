@@ -16,7 +16,7 @@ const Header =({scrollToRoomSectionEvent}) =>{
                     <Link to="/">
                         <img 
                         className="w-[100px]" 
-                        src="https://github.com/rolandoto/image-pms/blob/main/Logos/Mesa%20de%20trabajo%204@2x.png?raw=true" 
+                        src="https://github.com/rolandoto/image-pms/blob/main/Logos/Logo-de-Cartagena-DC.png?raw=true" 
                         alt="Logo de Gallery Hotel" 
                         width="100" 
                         height="100"
@@ -33,7 +33,7 @@ const Header =({scrollToRoomSectionEvent}) =>{
                         <a 
                          target="_blank"
                          href="https://www.google.com/maps?ll=6.211148,-75.570859&z=18&t=m&hl=es-419&gl=US&mapclient=embed&q=Cra.+43B+%2310-38+El+Poblado+Medell%C3%ADn,+El+Poblado,+Medell%C3%ADn,+Antioquia"
-                        className="text-white bg-black w-[150px] p-4 rounded hover:bg-black">Cómo llegar</a>
+                        className="text-white bg-yellow-500 w-[150px] p-4 rounded hover:bg-yellow-500">Cómo llegar</a>
                     </div>
 
                     <div className="lg:hidden" >
@@ -79,7 +79,7 @@ const Header =({scrollToRoomSectionEvent}) =>{
                                 Cómo llegar
                             </a>
                         </div>
-                }
+            }
         </nav>  
     )
 

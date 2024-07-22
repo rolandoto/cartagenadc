@@ -11,7 +11,7 @@ const CardRoomDetail =({features,image,title,price}) =>{
                 alt={title}
                 className="w-full h-auto md:h-[250px] object-cover rounded-lg mb-4"
             />
-                <h3 className=" words  text-black text-[23px]  mb-4">{title}</h3>
+                <h3 className=" words  text-yellow-500 text-[23px]  mb-4">{title}</h3>
                 <ul className="text-gray-700 h-[180px] text-left list-disc list-inside">
                 {features.map((feature, idx) => (
                     <li key={idx}>{feature}</li>
