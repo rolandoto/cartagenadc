@@ -57,7 +57,7 @@ const Checkout  =() =>{
         } 
     };
 
-    const [isOpen, setIsOpen] = useState(false);
+
 
     /*const togglePanel = () => {
       setIsOpen(!isOpen);

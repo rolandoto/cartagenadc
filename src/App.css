@@ -40,3 +40,8 @@
     transform: rotate(360deg);
   }
 }
+
+
+.border-hotel{
+  box-shadow: 17px 20px 40px rgba(0, 0, 0, .21)
+}

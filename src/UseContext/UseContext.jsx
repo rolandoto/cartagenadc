@@ -49,7 +49,7 @@ export const AutoProvider =({children}) =>{
           startDate,
           endDate,
           key: 'selection',
-          color: startDate && endDate ? 'black' : 'transparent', // Solo asigna color si ambas fechas son válidas
+          color: startDate && endDate ? '#eab308' : 'transparent', // Solo asigna color si ambas fechas son válidas
         },
       ]);
     

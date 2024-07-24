@@ -313,6 +313,8 @@ const subtotal = getCartSubtotal()
  */
     return (
         <div>
+
+          
           {FillContent}
            <Header  scrollToRoomSectionEvent={scrollToRoomSectionEvent}   />
               <div className="relative bg-cover bg-center h-[650px]" style={{ 
@@ -457,13 +459,10 @@ const subtotal = getCartSubtotal()
           <div ref={roomEventsSectionRef} >
             <Events  />
           </div>
-
           {subtotal >0 &&<Cart    
-                          /> } 
-
+                          /> }
           <AccordionAsk faqs={faqs} />
           <Footer />
-    
           </div>
     )
     

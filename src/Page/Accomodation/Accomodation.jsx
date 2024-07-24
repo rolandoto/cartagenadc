@@ -143,9 +143,47 @@ const Accommodation = () => {
                   
        * 
        */
+      const [visible, setVisible] = useState(false);
+      
+      useEffect(() => {
+        const timer = setTimeout(() => {
+          setVisible(true);
+        }, 5000); // 10000 ms = 10 segundos
+    
+        return () => clearTimeout(timer); // Limpiar el temporizador si el componente se desmonta
+      }, []);
+    
+
+      /**
+       * 
+       *  {visible && (
+            <div className="fixed right-4 h-[220px] top-44 z-40 text-white flex rounded-lg overflow-hidden shadow-lg max-w-md">
+              <div className="p-4 flex-1 opacity-80 bg-gray-700">
+                <h2 className="text-[15px] font-bold mb-2">¡OFERTA EXCLUSIVA SOLO PARA TI!</h2>
+                <p className="text-sm mb-3">
+                  ¡Reserve una de nuestras suites XL / 2XL / 3XL y obtenga un 8% DE DESCUENTO EXTRA en su reserva!
+                </p>
+                <button className="bg-white text-gray-800 px-4 py-1 rounded text-sm font-semibold hover:bg-gray-200 transition-colors">
+                  APLICAR DESCUENTO
+                </button>
+              </div>
+              <div className="w-1/2 relative">
+                <img 
+                  src="https://grupo-hoteles.com/storage/app/6/rooms/206865655-14-rooms-slider-3-hotel-cartagena-dc-economico-habitacion-clasica-seleccion.webp" 
+                  alt="Luxury Suite" 
+                  className="object-cover h-[220px] w-full"
+                />
+                <button onClick={() => setVisible(false)} className="absolute top-1 right-1 text-white bg-gray-800 rounded-full w-6 h-6 flex items-center justify-center">
+                  ×
+                </button>
+              </div>
+            </div>
+        )}
+
+       * 
+       */
 
     return (<div >
-           
             <Toaster position="bottom-right"  richColors   />
             {loadingCart && <LoadingOverlay title={"Cargando..."} />}
             <Header/>
