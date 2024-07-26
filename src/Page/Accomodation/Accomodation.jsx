@@ -156,7 +156,17 @@ const Accommodation = () => {
 
       /**
        * 
-       *  {visible && (
+       *  
+
+       * 
+       */
+
+    return (<div >
+            <Toaster position="bottom-right"  richColors   />
+            {loadingCart && <LoadingOverlay title={"Cargando..."} />}
+            <Header/>
+
+            {visible && (
             <div className="fixed right-4 h-[220px] top-44 z-40 text-white flex rounded-lg overflow-hidden shadow-lg max-w-md">
               <div className="p-4 flex-1 opacity-80 bg-gray-700">
                 <h2 className="text-[15px] font-bold mb-2">¡OFERTA EXCLUSIVA SOLO PARA TI!</h2>
@@ -179,16 +189,6 @@ const Accommodation = () => {
               </div>
             </div>
         )}
-
-       * 
-       */
-
-    return (<div >
-            <Toaster position="bottom-right"  richColors   />
-            {loadingCart && <LoadingOverlay title={"Cargando..."} />}
-            <Header/>
-
-          
             {subtotal >0 &&<Cart    
                             checkbxo={checkbox} 
                             handClickCart={handClickCart} /> } 

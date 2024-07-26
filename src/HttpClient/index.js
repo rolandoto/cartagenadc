@@ -36,8 +36,8 @@ const PostHotelByIdHotel = async ({id,desde,hasta,counPeople}) => {
           throw new Error('Response is not ok');
         }
     
-        const data = await resp.json();
-        return data;
+        const {ok} = await resp.json();
+        return ok;
       } catch (error) {
        
         throw error; // Puedes lanzar el error nuevamente o manejarlo de otra manera según tus necesidades
