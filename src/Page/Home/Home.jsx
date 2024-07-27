@@ -409,8 +409,7 @@ const subtotal = getCartSubtotal()
                         bottom: '20px',  // Ajusta esta propiedad según la distancia que desees del borde inferior
                         left: '50%',     // Centra el botón horizontalmente
                         transform: 'translateX(-50%)', // Ajusta la posición centrada
-                      }}
-                    >
+                      }}>
                       Continuar
                     </button>
                  </div> 

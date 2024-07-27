@@ -1,9 +1,7 @@
 import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 import UseHotelActions from "../../Actions/useHotelsActions";
-import CardHotel from "../../Component/CardHotel/CardHotel";
 import { Link } from "react-router-dom";
-
 
 const PanelHotelPromotion =() =>{
 

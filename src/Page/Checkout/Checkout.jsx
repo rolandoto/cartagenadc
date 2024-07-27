@@ -34,9 +34,7 @@ const Checkout  =() =>{
     const now = moment().format('YYYY-MM-DD');
     const validate = useValidation();
 
-    
-    
-
+ 
     const handleSubmit = async(e) => {
         e.preventDefault();
         const errors = validate(formValues);
