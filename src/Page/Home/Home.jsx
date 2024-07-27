@@ -313,8 +313,6 @@ const subtotal = getCartSubtotal()
  */
     return (
         <div>
-
-          
           {FillContent}
            <Header  scrollToRoomSectionEvent={scrollToRoomSectionEvent}   />
               <div className="relative bg-cover bg-center h-[650px]" style={{ 

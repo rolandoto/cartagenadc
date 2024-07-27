@@ -51,9 +51,7 @@ const FormCheckout=({Country,handleSubmit,loading,formErrors,handleChange,formVa
                                 formValues={formValues}
                                 Country={Country}
                             />
-
                         </div>
-                
                         <div className="w-full md:w-1/2 p-4 bg-gray-50 rounded-lg">
                             <div className="p-6 border border-gray-300 rounded-lg">
                                 <h2 className="text-xl font-bold mb-4">Resumen de tu reserva</h2>

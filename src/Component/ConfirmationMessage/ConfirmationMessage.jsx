@@ -20,7 +20,7 @@ const ConfirmationMessage  =({title}) =>{
                   
                 
                 </div>
-              </div>
+        </div>
     )
 
 }

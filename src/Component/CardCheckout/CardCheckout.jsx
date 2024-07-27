@@ -41,10 +41,7 @@ const CardCheckout =({room_image,title,Price,nights,person,end,start,Price_nigth
                     </div>
  
                     <div>
-                        <button 
-                            
-                            className="text-red-500 hover:text-red-200"
-                            >
+                        <button className="text-red-500 hover:text-red-200">
                                 <IconRiDeleteBinLine   handSubmit={handletoRemoveCart}  />
                     </button>
                     </div>

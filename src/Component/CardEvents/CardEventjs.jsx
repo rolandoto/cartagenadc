@@ -2,7 +2,7 @@ import moment from "moment";
 import React  from "react"
 import { Link } from "react-router-dom";
 
-const CardEvents =({ID, Name,DescriptionEvent1,Start_date,End_date}) =>{
+const CardEvents =({ID, Name,DescriptionEvent1,Start_date,End_date,img_events}) =>{
 
     const end =  moment(End_date).utc().format('YYYY/MM/DD')
     const now =  moment().utc().format('YYYY/MM/DD')
@@ -15,7 +15,7 @@ const CardEvents =({ID, Name,DescriptionEvent1,Start_date,End_date}) =>{
             >
                 <div className="md:w-1/3">
                 <img
-                    src={"https://github.com/rolandoto/image-pms/blob/main/WhatsApp%20Image%202024-07-12%20at%209.26.10%20AM.jpeg?raw=true"}
+                    src={img_events}
                     alt="Room"
                     className="w-full h-auto rounded-lg shadow-lg object-cover"
                 />

@@ -25,7 +25,6 @@ const UseHotelActions =() =>{
         dispatch(loadingHotel())
         try {
             const response  = await   HttpClient.getListoHotel()
-
             if(response){
                 dispatch(setListHotel(response)) 
             }else{

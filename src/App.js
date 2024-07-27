@@ -14,6 +14,8 @@ import Somethingwrong from './Page/somethingwrong/Somethingwrong';
 import InsertEvents from './Page/InsertEvents/InsertEvents';
 import PanelActivity from './Page/PanelActivity/PanelActivity';
 import PanelHotel from './Page/PanelHotel/PanelHotel';
+import PanelPromotion from './Page/PanelPromotion/PanelPromotion';
+import PanelHotelPromotion from './Page/PanelHotelPromotion/PanelHotelPromotion';
 
 
 function App() {
@@ -21,20 +23,22 @@ function App() {
     <Provider  store={store}>
       <AutoProvider>
       <BrowserRouter> 
-        <Routes>
-          <Route exact path="/" element={<Home/> } />
-          <Route exact path="/Accomodation" element={<Accommodation/> } />
-          <Route exact path="/Checkout" element={<Checkout/> } />
-          <Route exact path="/Events" element={<EventsNext />} />
-          <Route  exact path="Events/DetailEvents/:userId" element={<DetailEvents />} />
-          <Route  exact path="/DetailEvents/:userId" element={<DetailEvents />} />
-          <Route  exact path="/Login" element={<Login />} />
-          <Route  exact path="/InsertEvents/:id" element={<InsertEvents />} />
-          <Route  exact path="/PanelActivity/:id" element={<PanelActivity />} />
-          <Route  exact path="/PanelHotel" element={<PanelHotel />} />
-          <Route  exact path="/Somethingwrong" element={<Somethingwrong />} />
-          <Route path='/*'  element={<NoFound/> } />
-        </Routes> 
+          <Routes>
+              <Route exact path="/" element={<Home/> } />
+              <Route exact path="/Accomodation" element={<Accommodation/> } />
+              <Route exact path="/Checkout" element={<Checkout/> } />
+              <Route exact path="/Events" element={<EventsNext />} />
+              <Route  exact path="Events/DetailEvents/:userId" element={<DetailEvents />} />
+              <Route  exact path="/DetailEvents/:userId" element={<DetailEvents />} />
+              <Route  exact path="/Login" element={<Login />} />
+              <Route  exact path="/InsertEvents/:id" element={<InsertEvents />} />
+              <Route  exact path="/PanelActivity/:id" element={<PanelActivity />} />
+              <Route  exact path="/PanelHotel" element={<PanelHotel />} />
+              <Route  exact path="/PanelPromotion/:id" element={<PanelPromotion />} />
+              <Route  exact path="/PanelHotelPromotion" element={<PanelHotelPromotion />} />
+              <Route  exact path="/Somethingwrong" element={<Somethingwrong />} />
+              <Route path='/*'  element={<NoFound/> } />
+          </Routes> 
       </BrowserRouter>
       </AutoProvider>
       </Provider>
