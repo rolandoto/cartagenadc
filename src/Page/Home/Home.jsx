@@ -402,7 +402,7 @@ const subtotal = getCartSubtotal()
                      
                     </div>
                     <button
-                      className="mt-6 bg-black text-white px-6 py-3 rounded-lg hover:bg-black"
+                      className="mt-6 bg-[#eab308] text-white px-6 py-3 rounded-lg hover:bg-[#eab308]"
                       onClick={(e) => setContextMenuPosition(false) }
                       style={{
                         position: 'absolute',

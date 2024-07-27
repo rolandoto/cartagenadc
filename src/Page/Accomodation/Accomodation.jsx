@@ -281,7 +281,7 @@ const Accommodation = () => {
                           locale={esLocale}
                       />
                      <button
-                      className="mt-6 bg-green-700 text-white px-6 py-3 rounded-lg hover:bg-green-700"
+                      className="mt-6 bg-[#eab308] text-white px-6 py-3 rounded-lg hover:bg-[#eab308]"
                       onClick={(e) => setContextMenuPosition(false) }
                       style={{
                         position: 'absolute',
