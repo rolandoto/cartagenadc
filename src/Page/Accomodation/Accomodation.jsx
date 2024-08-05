@@ -23,6 +23,7 @@ import LoadingOverlay from "../../Component/LoadingCreateReserva/LoadingOverlay"
 import HeaderAccomodation from "../../Component/HeaderAccomodation/HeaderAccomodation";
 import Footer from "../../Component/Footer/Footer";
 import useRoomsPromotions from "../../Actions/useRoomsPromotions";
+import WhatsappButton from "../../Component/WhatsappButton/WhatsappButton";
 
 const Accommodation = () => {
 
@@ -52,12 +53,12 @@ const Accommodation = () => {
     const {getCartSubtotal} = UseCart()
     const subtotal = getCartSubtotal()
     const [checkbox,setCheckBox] =useState(false)
-    const formattedStartDate = moment(state[0].startDate).format('YYYY-MM-DD');
-    const formattedEndDate = moment(state[0].endDate).format('YYYY-MM-DD');
+    const startDate = state[0]?.startDate;
+    const endDate = state[0]?.endDate;
+    const formattedStartDate = startDate ? moment(startDate).format('YYYY-MM-DD') : '';
+    const formattedEndDate = endDate ? moment(endDate).format('YYYY-MM-DD') : '';
     const formattedStartDateToString = moment(state[0]?.startDate).format('DD MMM YYYY').toLowerCase();
     const formattedEndDateToString = moment(state[0]?.endDate).format('DD MMM YYYY').toLowerCase();
-
-    console.log(promotion)
 
     const handSubmitCupon =() =>{
       setPromotions(true)
@@ -108,14 +109,14 @@ const Accommodation = () => {
 
 
     const {RoomsGetPromotions,loadingGetRoomsProtions,errorGetRoomsProtions}= useSelector((state) => state.RoomsPromotios)
-  
+ 
     const  {GetRoomsPromotions} = useRoomsPromotions()
   
     const FetchDate =async() =>{
           await GetRoomsPromotions({id:6})
     }
 
-   
+
     useEffect(() => {
       const timer = setTimeout(() => {
         setVisible(true);
@@ -147,12 +148,12 @@ const Accommodation = () => {
         return <>{visible &&
           
           isTodaypromotions && (
-          <div className="fixed right-4  left-0 w-full m-auto h-[230px] top-44 z-40 text-white flex rounded-lg overflow-hidden shadow-lg max-w-md">
+          <div className="fixed right-4  left-0 w-full m-auto h-[190px] top-44 z-40 text-white flex rounded-lg overflow-hidden shadow-lg max-w-md">
 
               <div className="p-4  flex-1 bg-gray-700">
                 <h2 className="text-[15px] font-bold mb-2">¡OFERTA EXCLUSIVA SOLO PARA TI!</h2>
                 <p className="text-sm mb-3">
-                  ¡Reserve una de nuestras Cómodas habitaciones y obtenga un 10% DE DESCUENTO EXTRA en su reserva!
+                Reserva una de nuestras comidas habitaciónes y unten un 10% de descuento
                 </p>
                 <button  onClick={handSubmitCupon}  className="bg-white w-[200px] md:w-[200px]  text-gray-800 px-4 py-1 rounded text-sm font-semibold hover:bg-gray-200 transition-colors">
                   APLICAR DESCUENTO
@@ -162,7 +163,7 @@ const Accommodation = () => {
                 <img 
                   src="https://grupo-hoteles.com/storage/app/6/rooms/206865655-14-rooms-slider-3-hotel-cartagena-dc-economico-habitacion-clasica-seleccion.webp" 
                   alt="Luxury Suite" 
-                  className="object-cover h-[230px] w-full"
+                  className="object-cover h-[190px] w-full"
                 />
                 <button onClick={() => setVisible(false)} className="absolute  w-6 h-6  top-1 right-1 text-white bg-gray-800 rounded-full flex items-center justify-center">
                   ×
@@ -177,9 +178,10 @@ const Accommodation = () => {
       FetchDate ()
     },[])
   
-
-  
     const FillContent =()=>{
+      if(!formattedStartDate && !formattedEndDate){
+        return   <EmpyCart title={" Busca tu reserva en el calendario."} />
+      }
       if(loading){
        return  (
                 <div  className=" lg:flex    mx-auto   max-w-5xl items-center justify-between p-4 lg:px-8">
@@ -189,80 +191,20 @@ const Accommodation = () => {
       }if(error){
         return    <EmpyCart title={"No tenemos habitaciones disponibles para esta ocupación"} />
                 }
-        return <>  {hotel?.availableRooms?.map((List,index) => <CardAccomodation  promotion={promotion} key={index} {...List}/>)}</>
+        return <>  {hotel?.availableRooms?.map((List,index) => <CardAccomodation  
+                                                                totalCountAdults={totalCountAdults}
+                                                                promotion={promotion} 
+                                                                key={index} 
+                                                                {...List}/>)}</>
     }
     const monthsToShow = window.innerWidth >= 700 ? 2 : 1;
-
-    
-
-    /**
-     * 
-     *                  
-          <div className="fixed bottom-0 left-0 right-0 flex flex-col md:flex-row items-center justify-between bg-gray-100 p-4 shadow-md rounded-t-lg">
-            <div className="flex items-center mb-4 md:mb-0">
-                <img
-                  src="https://grupo-hoteles.com/storage/app/4/rooms/203289556-10-rooms-slider-1-habitacion_Estandar_Hotel_en_Medellin_Gallery_Hotel-01.webp"
-                  alt="Room"
-                  className="w-24 h-24 rounded-lg object-cover"
-                />
-                <div className="ml-4">
-                  <h2 className="text-lg font-bold">Ha seleccionado:</h2>
-                  <h3 className="text-xl font-bold text-orange-500">SUITE</h3>
-                  <p className="text-gray-500">Flexible WiFi, Desayuno, Cancelación Gratuita</p>
-                </div>
-            </div>
-            <div className="text-center md:text-right mb-4 md:mb-0">
-                <p className="text-2xl font-bold text-orange-500">$3,472,000</p>
-                <p className="text-sm text-gray-500">$868,000 x 4 Noches</p>
-                <p className="text-sm text-gray-500">$164,920 impuestos y tasas adicionales por noche</p>
-            </div>
-            <button className="w-full md:w-auto ml-0 md:ml-4 px-6 py-2 font-lora bg-orange-500 text-white rounded-sm ">
-              IR AL CHECKOUT
-            </button>
-          </div>
-     * 
-     */
-
-      /**
-       * 
-       * 
-                  
-       * 
-       */
-   
-      /**
-       * 
-       *   {visible && (
-            <div className="fixed right-4 h-[220px] top-44 z-40 text-white flex rounded-lg overflow-hidden shadow-lg max-w-md">
-              <div className="p-4 flex-1 opacity-80 bg-gray-700">
-                <h2 className="text-[15px] font-bold mb-2">¡OFERTA EXCLUSIVA SOLO PARA TI!</h2>
-                <p className="text-sm mb-3">
-                  ¡Reserve una de nuestras suites XL / 2XL / 3XL y obtenga un 8% DE DESCUENTO EXTRA en su reserva!
-                </p>
-                <button className="bg-white  text-gray-800 px-4 py-1 rounded text-sm font-semibold hover:bg-gray-200 transition-colors">
-                  APLICAR DESCUENTO
-                </button>
-              </div>
-              <div className="w-1/2 relative">
-                <img 
-                  src="https://grupo-hoteles.com/storage/app/6/rooms/206865655-14-rooms-slider-3-hotel-cartagena-dc-economico-habitacion-clasica-seleccion.webp" 
-                  alt="Luxury Suite" 
-                  className="object-cover h-[220px] w-full"
-                />
-                <button onClick={() => setVisible(false)} className="absolute top-1 right-1 text-white bg-gray-800 rounded-full w-6 h-6 flex items-center justify-center">
-                  ×
-                </button>
-              </div>
-            </div>
-        )}
-       */
 
     return (<div >
             <Toaster position="bottom-right"  richColors   />
             {loadingCart && <LoadingOverlay title={"Cargando..."} />}
             <Header/>
             
-          
+            <WhatsappButton />
             {subtotal >0 &&<Cart    
                             checkbxo={checkbox} 
                             handClickCart={handClickCart} /> } 
@@ -287,7 +229,6 @@ const Accommodation = () => {
                   months={2}
                   dayContentRenderer={(date) => {
                     const className = getClassNameForDate(date);
-                 
                     return (
                       <div className={className}>
                         {date.getDate()}
@@ -386,7 +327,6 @@ const Accommodation = () => {
                   <div className="p-2">
                     {FillContentPromotions()}
                   </div>
-                 
                     {FillContent()}
                     <Footer />
                 </div>

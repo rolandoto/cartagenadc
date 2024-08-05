@@ -20,14 +20,14 @@ const useRoomsPromotions =() =>{
             const response  = await HttpClient.PostRoomPromotions({days})
             if(response){
                 dispatch(setRoomsPromtions(response)) 
-                toast.success(`se activado la promosiones exitosas`)
+              
             }else{
                 dispatch(setErrorRoomsPromtions("no found")) 
-                toast.error(`error en el servicio`)
+
             }
         } catch (error) {
             dispatch(setErrorRoomsPromtions("no found")) 
-            toast.error(`error en el servicio  ${error}` )
+           
         }
     }
 
@@ -37,14 +37,14 @@ const useRoomsPromotions =() =>{
             const response  = await HttpClient.GetRoomsPromtions({id})
             if(response){
                 dispatch(setRoomsGetPromtions(response)) 
-                toast.success(`se activado la promosiones exitosas`)
+               
             }else{
                 dispatch(setErrorGetRoomsPromtions("no found")) 
-                toast.error(`error en el servicio`)
+               
             }
         } catch (error) {
             dispatch(setErrorGetRoomsPromtions("no found")) 
-            toast.error(`error en el servicio  ${error}` )
+            
         }
     }
 

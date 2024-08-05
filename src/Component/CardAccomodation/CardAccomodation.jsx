@@ -7,12 +7,11 @@ import useCartActions from "../../Actions/useCartActions";
 import { useSelector } from "react-redux";
 import {toast} from "sonner"
 
-const CardAccomodation =({ID,room_image,title,description,Price,cantidad,nights,person,Room,end,start,Price_nigth,promotion}) =>{
+const CardAccomodation =({ID,room_image,title,description,Price,cantidad,nights,person,Room,end,start,Price_nigth,promotion,totalCountAdults,max_people}) =>{
         
     const {AddCart } =useCartActions()
     
     const {cart} = useSelector(state => state.Cart);
-
 
     const originalPrice = Price; // Precio original
     const discountRate = 0.19; // 19% de descuento
@@ -46,6 +45,8 @@ const CardAccomodation =({ID,room_image,title,description,Price,cantidad,nights,
                         </Fragment>
                         <DescripctionAccomodation cantidad={cantidad}  description={description} title={title}  />
                         <ButtonAccomodation 
+                                max_people={max_people}
+                                totalCountAdults={totalCountAdults}
                                 validPromotions={validPromotions}
                                 promotion={promotion}
                                 handleAddToCart={handleAddToCart}
