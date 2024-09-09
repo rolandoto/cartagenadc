@@ -35,33 +35,22 @@ const DetailEvents =() =>{
             </div>
     }
 
+
     return <>
-    <div className="mx-auto max-w-4xl p-6 mb-24">
+    <div className="mx-auto max-w-3xl p-6 mb-24">
             <h1 className="text-[30px] text-center text-[#ff7a45] font-lora  mb-6">{geteventsDetail.Name}</h1>
-                <div className=" w-full p-4">
+                <div className="w-full">
                     <img
                             src={geteventsDetail.img_events}
                             alt="Room"
                             className="w-full h-[500px] object-center rounded-lg shadow-lg" />
                 </div>
                 <span className="text-2xl font-lora text-black mb-4" >{geteventsDetail.Place}: </span>
-                <div className=" md:pl-6 mt-8 md:mt-3">
-                    <p className="text-gray-700 text-justify	 mb-4">{geteventsDetail.DescriptionEvent1}</p>
-                    <ul className="list-disc ml-4   text-justify text-gray-700 ">
-                    {geteventsDetail?.activities?.actividades1?.map((highlight, index) => (
-                        <li key={index}><span className="text-black text-[18px]  font-lora " >{highlight?.Tipo}</span> {highlight?.Description}</li>
-                    ))}
-                    </ul>
-                    <p className="text-[20px] text-black  font-lora  mb-3  text-justify mt-2	">
-                        {geteventsDetail.DescriptionEvent2}
-                    </p>
-                    <ul className="list-disc ml-4   text-justify text-gray-700 ">
-                    {geteventsDetail?.activities?.actividades2?.map((highlight, index) => (
-                         <li key={index}><span className="text-black text-[18px]  font-lora " >{highlight?.Tipo}</span> {highlight?.Description}</li>
-                    ))}
-                    </ul>
+                <div className=" md:pl-6 mt-12 md:mt-6">
+                    <div  className="mt-4" dangerouslySetInnerHTML={{__html: geteventsDetail.Description}} >
+                    </div>
                 </div>
-            <h1 className="text-[20px] text-black  font-lora mt-4  mb-6">{geteventsDetail.Finally}</h1>
+          
         </div>
     </>
    

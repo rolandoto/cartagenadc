@@ -86,18 +86,20 @@ const PostHotelByIdHotel = async ({id,desde,hasta,counPeople}) => {
 
 
 
-  const PostCreateEvents = async ({Name,DescriptionEvent1,DescriptionEvent2,Start_date,End_date,Place,id_hotel,actividades1,actividades2,Finally}) => {
+  const PostCreateEvents = async ({Name,Description,Start_date,End_date,Place,id_hotel}) => {
     try {
         const resp = await fetch(`${config.serverRoute}/api/hotels/webSite/InsertEventsWebsite`, {
           method: "POST",
           headers: {
             'Content-type': 'application/json'
           },
-          body: JSON.stringify({Name,DescriptionEvent1,DescriptionEvent2,Start_date,End_date,Place,id_hotel,actividades1,actividades2,Finally})
+          body: JSON.stringify({Name,Description,Start_date,End_date,Place,id_hotel})
         });
         if (!resp.ok) {
           throw new Error('Response is not ok');
         }
+
+        console.log(resp)
         const data = await resp.json();
         return data;
       } catch (error) {
