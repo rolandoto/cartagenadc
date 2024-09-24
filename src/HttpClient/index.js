@@ -86,7 +86,7 @@ const PostHotelByIdHotel = async ({id,desde,hasta,counPeople}) => {
 
 
 
-  const PostCreateEvents = async ({Name,Description,Start_date,End_date,Place,id_hotel,image,type,ID,imageUpdate}) => {
+  const PostCreateEvents = async ({Name,Description,Start_date,End_date,Place,id_hotel,image,type,ID}) => {
     const formData = new FormData();
     formData.append('Name', Name);
     formData.append('Description', Description);

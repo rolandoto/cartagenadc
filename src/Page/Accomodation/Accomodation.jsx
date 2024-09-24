@@ -24,7 +24,7 @@ import HeaderAccomodation from "../../Component/HeaderAccomodation/HeaderAccomod
 import Footer from "../../Component/Footer/Footer";
 import useRoomsPromotions from "../../Actions/useRoomsPromotions";
 import WhatsappButton from "../../Component/WhatsappButton/WhatsappButton";
-
+import { Environment } from "../../Config/Config";
 const Accommodation = () => {
 
 
@@ -36,9 +36,6 @@ const Accommodation = () => {
   const {getHotel} = UseHotelActions()
   const [contextShowMenuPeople, setContextShowMenuPeople] = useState(false);
   const {error,hotel,loading}= useSelector((state) => state.Hotel)
-  const [promotion,setPromotions] =useState(false)
-  const [visible, setVisible] = useState(false);
-      
   const {loadingCart} = useSelector(state => state.Cart);
   const {handleSelect,state,setContextMenuPosition,contextMenuPosition,
     handChangeAdults,
@@ -59,18 +56,14 @@ const Accommodation = () => {
     const formattedEndDate = endDate ? moment(endDate).format('YYYY-MM-DD') : '';
     const formattedStartDateToString = moment(state[0]?.startDate).format('DD MMM YYYY').toLowerCase();
     const formattedEndDateToString = moment(state[0]?.endDate).format('DD MMM YYYY').toLowerCase();
-
-    const handSubmitCupon =() =>{
-      setPromotions(true)
-      setVisible(false)
-    }
+    const [promotion,setPromotions] =useState(false)
+    const [visible, setVisible] = useState(false);
 
     const PostHotelByIdHotel = useCallback(async () => {
-        setContextMenuPosition(false);
-        setContextShowMenuPeople(false)
-        await getHotel({ id: 6, desde:formattedStartDate, hasta: formattedEndDate,counPeople:totalCountAdults });
-    }, [formattedStartDate,formattedEndDate,totalCountAdults]);
-
+      setContextMenuPosition(false);
+      setContextShowMenuPeople(false)
+      await getHotel({propertyID:Environment.propertyID,startDate:formattedStartDate, endDate: formattedEndDate,token:Environment.Token,counPeople:totalCountAdults });
+  }, [formattedStartDate,formattedEndDate,totalCountAdults]);
 
     useEffect(() =>{
       PostHotelByIdHotel()
@@ -108,14 +101,14 @@ const Accommodation = () => {
     }
 
 
+    
     const {RoomsGetPromotions,loadingGetRoomsProtions,errorGetRoomsProtions}= useSelector((state) => state.RoomsPromotios)
  
     const  {GetRoomsPromotions} = useRoomsPromotions()
   
     const FetchDate =async() =>{
-          await GetRoomsPromotions({id:6})
+          await GetRoomsPromotions({id:3})
     }
-
 
     useEffect(() => {
       const timer = setTimeout(() => {
@@ -125,6 +118,13 @@ const Accommodation = () => {
       return () => clearTimeout(timer); // Limpiar el temporizador si el componente se desmonta
     }, []);
   
+
+    const handSubmitCupon =() =>{
+      setPromotions(true)
+      setVisible(false)
+    }
+
+
 
     const isTodaySelected = () => {
       const todayIndex = moment().format('d'); // Obtiene el nombre completo del día actual
@@ -178,6 +178,8 @@ const Accommodation = () => {
       FetchDate ()
     },[])
   
+
+  
     const FillContent =()=>{
       if(!formattedStartDate && !formattedEndDate){
         return   <EmpyCart title={" Busca tu reserva en el calendario."} />
@@ -189,21 +191,25 @@ const Accommodation = () => {
                 </div> 
        ) 
       }if(error){
-        return    <EmpyCart title={"No tenemos habitaciones disponibles para esta ocupación"} />
+        return     <EmpyCart title={"Lo sentimos, en este momento no contamos con alojamientos disponibles para las fechas seleccionadas. Por favor, modifique las fechas para generar una nueva búsqueda. O puede contactar a nuestro equipo para obtener más información llamando al +57 3024449934."} />
                 }
-        return <>  {hotel?.availableRooms?.map((List,index) => <CardAccomodation  
-                                                                totalCountAdults={totalCountAdults}
-                                                                promotion={promotion} 
-                                                                key={index} 
-                                                                {...List}/>)}</>
+        return <>  {hotel?.data?.map((List,index) => <CardAccomodation  
+          counPeople={hotel.counPeople}
+          endDate={hotel.endDate}
+          startDate={hotel.startDate}
+          nightsToday={hotel.nights}
+          promotion={promotion} 
+          totalCountAdults={totalCountAdults}
+          key={index} {...List}/>)}</>
     }
     const monthsToShow = window.innerWidth >= 700 ? 2 : 1;
 
     return (<div >
+           
             <Toaster position="bottom-right"  richColors   />
             {loadingCart && <LoadingOverlay title={"Cargando..."} />}
             <Header/>
-            
+
             <WhatsappButton />
             {subtotal >0 &&<Cart    
                             checkbxo={checkbox} 
@@ -225,10 +231,11 @@ const Accommodation = () => {
                   rangeColors={["rgb(255 104 0 / 36%);"]}
                   minDate={new Date()}
                   onChange={handleSelect}
-                  editableDateInputs={true}
+                  editableDateInputs={false}
                   months={2}
                   dayContentRenderer={(date) => {
                     const className = getClassNameForDate(date);
+                 
                     return (
                       <div className={className}>
                         {date.getDate()}
@@ -239,7 +246,7 @@ const Accommodation = () => {
                   moveRangeOnFirstSelection={false} // No mueve el rango en la primera selección
                   showSelectionPreview={false} // Muestra la selección previa
                   startDatePlaceholder="Early"
-                  showDateDisplay={true}
+                  showDateDisplay={false}
                   ranges={state}
                   direction="horizontal"
                   locale={esLocale}
@@ -257,7 +264,7 @@ const Accommodation = () => {
                           rangeColors={["rgb(255 104 0 / 36%);"]}
                           minDate={new Date()}
                           onChange={handleSelect}
-                          editableDateInputs={true}
+                          editableDateInputs={false}
                           months={monthsToShow}
                           dayContentRenderer={(date) => {
                             const className = getClassNameForDate(date);
@@ -271,13 +278,13 @@ const Accommodation = () => {
                           moveRangeOnFirstSelection={false} // No mueve el rango en la primera selección
                           showSelectionPreview={false} // Muestra la selección previa
                           startDatePlaceholder="Early"
-                          showDateDisplay={true}
+                          showDateDisplay={false}
                           ranges={state}
                           direction="horizontal"
                           locale={esLocale}
                       />
                      <button
-                      className="mt-6 bg-[#eab308] text-white px-6 py-3 rounded-lg hover:bg-[#eab308]"
+                      className="mt-6 bg-green-700 text-white px-6 py-3 rounded-lg hover:bg-green-700"
                       onClick={(e) => setContextMenuPosition(false) }
                       style={{
                         position: 'absolute',
@@ -324,7 +331,8 @@ const Accommodation = () => {
                 </div>              
                 </SectionSearch>
                 <div >
-                  <div className="p-2">
+
+                <div className="p-2">
                     {FillContentPromotions()}
                   </div>
                     {FillContent()}
