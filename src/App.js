@@ -16,6 +16,7 @@ import PanelActivity from './Page/PanelActivity/PanelActivity';
 import PanelHotel from './Page/PanelHotel/PanelHotel';
 import PanelPromotion from './Page/PanelPromotion/PanelPromotion';
 import PanelHotelPromotion from './Page/PanelHotelPromotion/PanelHotelPromotion';
+import UpdateEvents from './Page/UpdateEvents/UpdateEvents';
 
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
               <Route exact path="/Events" element={<EventsNext />} />
               <Route  exact path="Events/DetailEvents/:userId" element={<DetailEvents />} />
               <Route  exact path="/DetailEvents/:userId" element={<DetailEvents />} />
+              <Route  exact path="/UpdateDetailEvents/:id" element={<UpdateEvents />} />
               <Route  exact path="/Login" element={<Login />} />
               <Route  exact path="/InsertEvents/:id" element={<InsertEvents />} />
               <Route  exact path="/PanelActivity/:id" element={<PanelActivity />} />
@@ -37,6 +39,7 @@ function App() {
               <Route  exact path="/PanelPromotion/:id" element={<PanelPromotion />} />
               <Route  exact path="/PanelHotelPromotion" element={<PanelHotelPromotion />} />
               <Route  exact path="/Somethingwrong" element={<Somethingwrong />} />
+             
               <Route path='/*'  element={<NoFound/> } />
           </Routes> 
       </BrowserRouter>

@@ -41,7 +41,7 @@ const PanelActivity =()  =>{
                                  const start =  moment(item.Start_date).utc().format('YYYY/MM/DD')
                                  const end =  moment(item.End_date).utc().format('YYYY/MM/DD')
                              
-                                return (<Link className="flex  cursor-pointer items-center flex-col md:flex-row p-6 bg-gray-100 rounded-lg shadow-lg hover:bg-white hover:shadow-lg transition ease-in duration-300 ">
+                                return (<Link to={`/UpdateDetailEvents/${item.ID}`}  className="flex  cursor-pointer items-center flex-col md:flex-row p-6 bg-gray-100 rounded-lg shadow-lg hover:bg-white hover:shadow-lg transition ease-in duration-300 ">
                                             
                                             <div className="md:w-1/3">
                                                     <img

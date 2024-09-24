@@ -16,11 +16,12 @@ const UseEventsActions =() =>{
     const navigate = useNavigate();
     const dispatch =  useAppDispatch()
 
-    const postCreateEvents =async({Name,Description,Start_date,End_date,Place,id_hotel}) =>{
+    const postCreateEvents =async({Name,Description,Start_date,End_date,Place,id_hotel,image,type,ID}) =>{
+    
         dispatch(loadingEvents())
         try {
-            const response  = await HttpClient.PostCreateEvents({Name,Description,Start_date,End_date,Place,id_hotel})
-            console.log(response)
+            const response  = await HttpClient.PostCreateEvents({Name,Description,Start_date,End_date,Place,id_hotel,image,type,ID})
+          
             if(response){
                 dispatch(setEvents(response)) 
                 navigate(-1)
