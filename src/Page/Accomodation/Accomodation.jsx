@@ -59,15 +59,17 @@ const Accommodation = () => {
     const [promotion,setPromotions] =useState(false)
     const [visible, setVisible] = useState(false);
 
+    
     const PostHotelByIdHotel = useCallback(async () => {
       setContextMenuPosition(false);
       setContextShowMenuPeople(false)
       await getHotel({propertyID:Environment.propertyID,startDate:formattedStartDate, endDate: formattedEndDate,token:Environment.Token,counPeople:totalCountAdults });
   }, [formattedStartDate,formattedEndDate,totalCountAdults]);
 
-    useEffect(() =>{
-      PostHotelByIdHotel()
-    },[])
+  useEffect(() =>{
+    PostHotelByIdHotel()
+  },[])
+
 
     const HandClickMenuPeople =() =>{
       if(contextShowMenuPeople){
@@ -177,7 +179,6 @@ const Accommodation = () => {
     useEffect(() =>{
       FetchDate ()
     },[])
-  
 
   
     const FillContent =()=>{
