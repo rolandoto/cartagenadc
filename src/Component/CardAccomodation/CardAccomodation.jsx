@@ -49,7 +49,7 @@ return (
 <MainAccomodationRoom className=" lg:flex    mx-auto   max-w-5xl items-center justify-between p-4 lg:px-8"   >     
 <MainProduct className="lg:flex block bg-white shadow-md"    >
 <Fragment>
-    <TitleDinner />
+  
  
     <ImginProduct   className="w-auto" src={roomTypePhotos[0].image}  alt="Hotel Image"/>
 

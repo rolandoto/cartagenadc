@@ -107,14 +107,10 @@ const subtotal = getCartSubtotal()
   ];
   
   const features = [
-      { icon: <IconsFaGlassMartini/>, title: 'Cóctel de bienvenida' },
       { icon: <IconsGiForkKnifeSpoon/>, title: 'Desayuno incluido' },
       { icon: <IconsFaConciergeBell/>, title: 'Recepción 24 horas' },
-      { icon: <IconsaCar/>, title: 'Variedad de transporte', description: 'Metro, tranvía, autobús, taxi' },
       { icon: <IconsRiBankFill/>, title: 'Vida cultural y nocturna', description: 'Bares, museos, restaurantes' },
       { icon: <IconsFaSquareParking/>, title: 'Parqueadero gratis*', description: 'Sujeto a disponibilidad' },
-      { icon: <IconsGiForkKnifeSpoon/>, title: 'Restaurante - Bar  ', description: ' con vista panorámica' },
-      { icon: <IconsFaStore/>, title: 'Alianzas comerciales', description: 'Servicio de taxi, gimnasio, tours, médico, comunicaciones.' },
       { icon: <IconsFaBanSmoking/>, title: 'Espacios libre de humo', description: "" },
     ];
 
@@ -226,14 +222,15 @@ const subtotal = getCartSubtotal()
 
     const rooms = [
       {title: 'Room Deluxe', price:210000 , image:"https://grupo-hoteles.com/storage/app/6/rooms/1843848947-16-rooms-slider-1-hotel-cartagena-dc-economico-habitacion-delux-principal-1.webp", 
-        features: ['Cama matrimonial', 'Baño privado con ducha', 'Wi-Fi gratuito', 'Smart TV',"Aire Acondicionado"] },
-      {title: 'Room Clasica',price:170000, image: "https://grupo-hoteles.com/storage/app/6/rooms/1068378615-14-rooms-slider-1-_MG_1836.jpg", 
-        features: ['Cama matrimonial', 'Baño privado con ducha', 'Wi-Fi gratuito', 'Smart TV',"Aire Acondicionado"] },
-      {title: 'Room Grupal',price:300000, image: "https://grupo-hoteles.com/storage/app/6/rooms/799736975-17-rooms-slider-1-hotel-cartagena-dc-economico-habitacion-grupal-slider-principal-1.webp", 
-        features: ['Dos Cama', 'Baño privado con ducha', 'Wi-Fi gratuito', 'Smart TV','Aire Acondicionado']},
+        features: ['Cama doble', 'Baño privado con ducha', 'Wi-Fi gratuito', 'Smart TV',"Aire Acondicionado","Jacuzzi"] },
+      {title: 'Room Clasica',price:169000, image: "https://grupo-hoteles.com/storage/app/6/rooms/1068378615-14-rooms-slider-1-_MG_1836.jpg", 
+        features: ['Cama doble', 'Baño privado con ducha', 'Wi-Fi gratuito', 'Smart TV',"Aire Acondicionado"] },
+      {title: 'Room familiar',price:300000, image: "https://grupo-hoteles.com/storage/app/6/rooms/799736975-17-rooms-slider-1-hotel-cartagena-dc-economico-habitacion-grupal-slider-principal-1.webp", 
+        features: ['Cama doble', 'Baño privado con ducha', 'Wi-Fi gratuito', 'Smart TV','Aire Acondicionado']},
       {title: 'Room VIP',price:190000, image: "https://grupo-hoteles.com/storage/app/6/rooms/1946295107-15-rooms-slider-1-_MG_1852.jpg", 
-       features: ['Cama matrimonial', 'Baño privado con ducha', 'Wi-Fi gratuito', 'Smart TV','Aire Acondicionado',"Jacuzzi "]},
-     
+       features: ['Cama doble', 'Baño privado con ducha', 'Wi-Fi gratuito', 'Smart TV','Aire Acondicionado',"Jacuzzi "]},
+       {title: 'Room Grupal',price:300000, image: "https://github.com/rolandoto/image-pms/blob/main/Dueto/_MG_1775.jpg?raw=true", 
+       features: ['Cama doble', 'Baño privado con ducha', 'Wi-Fi gratuito', 'Smart TV','Aire Acondicionado']},
     ];
 
     const monthsToShow = window.innerWidth >= 700 ? 2 : 1; // Cambia 768 según tu punto de ruptura deseado
@@ -324,7 +321,7 @@ const subtotal = getCartSubtotal()
                       {loadingHotel ?"cargando " :hotel?.nombre}  
                     </h1>
                     <p className="mt-2 text-base md:text-xl lg:text-3xl font-lora font-normal">
-                        Más que un hotel, una experiencia artística
+                        Ideal para negocios o placer, con piscina para tu relax.
                     </p>
                     <button className="mt-6 bg-yellow-500 text-white px-6 py-3 rounded-lg hover:bg-yellow-500" onClick={scrollToRoomSection}>
                         Ver habitaciones

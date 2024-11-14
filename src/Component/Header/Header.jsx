@@ -32,7 +32,7 @@ const Header =({scrollToRoomSectionEvent}) =>{
                     <div className="hidden lg:block " >
                         <a 
                          target="_blank"
-                         href="https://www.google.com/maps?ll=6.211148,-75.570859&z=18&t=m&hl=es-419&gl=US&mapclient=embed&q=Cra.+43B+%2310-38+El+Poblado+Medell%C3%ADn,+El+Poblado,+Medell%C3%ADn,+Antioquia"
+                         href="https://www.google.com/maps/place/Hotel+cartagena+DC/@10.3930228,-75.4841207,15z/data=!4m2!3m1!1s0x0:0xabf0c7ff8c60f89e?sa=X&ved=1t:2428&ictx=111"
                         className="text-white bg-yellow-500 w-[150px] p-4 rounded hover:bg-yellow-500">Cómo llegar</a>
                     </div>
 
@@ -73,7 +73,7 @@ const Header =({scrollToRoomSectionEvent}) =>{
                                 Reservas
                             </Link>
                             <a  target="_blank"
-                                href="https://www.google.com/maps?ll=6.211148,-75.570859&z=18&t=m&hl=es-419&gl=US&mapclient=embed&q=Cra.+43B+%2310-38+El+Poblado+Medell%C3%ADn,+El+Poblado,+Medell%C3%ADn,+Antioquia"
+                                href="https://www.google.com/maps/place/Hotel+cartagena+DC/@10.3930228,-75.4841207,15z/data=!4m2!3m1!1s0x0:0xabf0c7ff8c60f89e?sa=X&ved=1t:2428&ictx=111"
                                 className="text-white bg-black w-full p-4 rounded hover:bg-black"   
                             >
                                 Cómo llegar
