@@ -1,6 +1,7 @@
 import React from "react"
 import {  IconFaFacebookF, IconFaInstagram, IconFaMapMarkerAlt, IconFaWhatsapp, IconFaYoutube, IconsMdEmail } from "../Icons/Icons"
 import pdf from "../../Image/contracto.pdf"
+import garantia from "../../Image/garantia.pdf"
 
 const Footer =() =>{
 
@@ -47,7 +48,13 @@ const Footer =() =>{
             <div class=" flex items-center justify-center ">
             <div class="w-full max-w-md mt-6">
                     <h2 class="text-center text-xl font-semibold mb-6">Navegación</h2>
-                    <a target="_blank" href={pdf} className="text-black"> Términos y Condiciones del sitio web</a>.
+                    <div className="block" >
+                                <ul>
+                                    <li><a target="_blank" href={pdf} className="text-black"> Términos y Condiciones del sitio web</a>.</li>
+                                    <li> <a target="_blank" href={garantia} className="text-black"> Política de garantía</a>.</li>
+                                    <li>  <a target="_blank" className="text-black"> Política de tratamiento de datos</a>.</li>
+                                </ul>
+                            </div>
                 </div>
             </div>
         </div>
