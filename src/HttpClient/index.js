@@ -42,63 +42,65 @@ const PostHotelByIdHotel = async ({id,desde,hasta,counPeople}) => {
        
         throw error; // Puedes lanzar el error nuevamente o manejarlo de otra manera según tus necesidades
       }
-  };
+  };    
 
   const PostpostReservation = async ({propertyID,
-                                    token,
-                                    startDate,
-                                    endDate,
-                                    guestFirstName,
-                                    guestLastName,
-                                    guestEmail,
-                                    guestPhone,
-                                    rooms,
-                                    adults,
-                                    children,
-                                    dateCreated,  
-                                    number,
-                                    exp_month,
-                                    exp_year,
-                                    cvc,
-                                    card_holder,
-                                    subtotal}) => {
-    try {
-        const resp = await fetch(`${config.serverRoute}/api/hotels/cloubeds/PostpostReservation`, {
-          method: "POST",
-          headers: {
-            'Content-type': 'application/json'
-          },
-          body: JSON.stringify({propertyID,
-                                token,
-                                startDate,
-                                endDate,
-                                guestFirstName,
-                                guestLastName,
-                                guestEmail,
-                                guestPhone,
-                                rooms,
-                                adults,
-                                children,
-                                dateCreated,
-                                number,
-                                exp_month,
-                                exp_year,
-                                cvc,
-                                card_holder,
-                                subtotal})
-        });
-    
-        if (!resp.ok) {
-          throw new Error('Response is not ok');
-        }
-    
-        const {ok} = await resp.json();
-        return ok;
-      } catch (error) {
-       
-        throw error; // Puedes lanzar el error nuevamente o manejarlo de otra manera según tus necesidades
-      }
-  };
+    token,
+    startDate,
+    endDate,
+    guestFirstName,
+    guestLastName,
+    guestEmail,
+    guestPhone,
+    rooms,
+    adults,
+    children,
+    dateCreated,  
+    number,
+    exp_month,
+    exp_year,
+    cvc,
+    card_holder,
+    subtotal,
+    promoCode}) => {
+try {
+    const resp = await fetch(`${config.serverRoute}/api/hotels/cloubeds/PostpostReservation`, {
+    method: "POST",
+    headers: {
+    'Content-type': 'application/json'
+    },
+    body: JSON.stringify({propertyID,
+    token,
+    startDate,
+    endDate,
+    guestFirstName,
+    guestLastName,
+    guestEmail,
+    guestPhone,
+    rooms,
+    adults,
+    children,
+    dateCreated,
+    number,
+    exp_month,
+    exp_year,
+    cvc,
+    card_holder,
+    subtotal,
+    promoCode})
+    });
+
+    if (!resp.ok) {
+    throw new Error('Response is not ok');
+    }
+
+    const {ok} = await resp.json();
+    return ok;
+    } catch (error) {
+
+    throw error; // Puedes lanzar el error nuevamente o manejarlo de otra manera según tus necesidades
+    }
+    };
 
   const GetCountry = async () => {
     try {
@@ -251,14 +253,14 @@ const PostHotelByIdHotel = async ({id,desde,hasta,counPeople}) => {
       }
   };
 
-  const getAvailableRoomTypes = async ({propertyID,startDate,endDate,token,counPeople}) => {
+  const getAvailableRoomTypes = async ({propertyID,startDate,endDate,token,counPeople,promoCode}) => {
     try {
         const resp = await fetch(`${config.serverRoute}/api/hotels/cloubeds/getAvailableRoomTypes`, {
           method: "POST",
           headers: {
             'Content-type': 'application/json'
           },
-          body: JSON.stringify({propertyID,startDate,endDate,token,counPeople})
+          body: JSON.stringify({propertyID,startDate,endDate,token,counPeople,promoCode})
         });
         if (!resp.ok) {
           throw new Error('Response is not ok');

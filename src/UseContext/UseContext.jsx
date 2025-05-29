@@ -31,11 +31,15 @@ export const AutoProvider =({children}) =>{
         setChildrem(childrem - 1);
       }
     }
+    const today = new Date();                          // Hoy
+    const tomorrow = new Date(today);                  // Clonar la fecha de hoy
+    tomorrow.setDate(tomorrow.getDate() + 1);          // Sumar un día
   
+    // Establecer el estado usando objetos Date completos
     const [state, setState] = useState([
       {
-        startDate: null,
-        endDate: null,
+        startDate: today,       // Objeto Date de hoy
+        endDate: tomorrow,      // Objeto Date de mañana
         key: 'selection',
         showDateDisplay: true,
         color: 'transparent',
@@ -45,40 +49,42 @@ export const AutoProvider =({children}) =>{
     const [isStartDateSelected, setIsStartDateSelected] = useState(false);
     const [rangeMessage, setRangeMessage] = useState('');
 
-    const handleSelect = (ranges) => {
-      const { startDate, endDate } = ranges.selection;
-    
-      setState([
-          {
-              startDate,
-              endDate,
-              key: 'selection',
-              color: startDate && endDate ? '#eab308' : 'transparent',
-          },
-      ]);
-    
-      if (startDate && !isStartDateSelected) {
-          // Se selecciona la fecha de inicio
-          setRangeMessage("Fecha de inicio seleccionada. Ahora seleccione la fecha de finalización.");
-          setIsStartDateSelected(true);
-      } else if (startDate && endDate) {
-          // Calcula la diferencia en días entre las dos fechas
-          const diffInTime = endDate - startDate;
-          const diffInDays = diffInTime / (1000 * 60 * 60 * 24); // Convierte el tiempo en días
-    
-          if (diffInDays < 1) {
-              setRangeMessage("El rango seleccionado debe ser al menos de un día.");
-              setIsStartDateSelected(false); // Reinicia la selección
-              alert("deber ser mayor a un dia")
-          } else {
-              // Si el rango es válido
-              setRangeMessage(`Rango seleccionado: ${startDate.toLocaleDateString()} - ${endDate.toLocaleDateString()}`);
-              setIsStartDateSelected(false); // Reinicia para futuras selecciones
-              setContextMenuPosition(false); // Cierra el modal o menú contextual
-          }
+
+const handleSelect = (ranges) => {
+  const { startDate, endDate } = ranges.selection;
+
+  setState([
+      {
+          startDate,
+          endDate,
+          key: 'selection',
+          color: startDate && endDate ? 'black' : 'transparent',
+      },
+  ]);
+
+  if (startDate && !isStartDateSelected) {
+      // Se selecciona la fecha de inicio
+      setRangeMessage("Fecha de inicio seleccionada. Ahora seleccione la fecha de finalización.");
+      setIsStartDateSelected(true);
+  } else if (startDate && endDate) {
+      // Calcula la diferencia en días entre las dos fechas
+      const diffInTime = endDate - startDate;
+      const diffInDays = diffInTime / (1000 * 60 * 60 * 24); // Convierte el tiempo en días
+
+      if (diffInDays < 1) {
+          setRangeMessage("El rango seleccionado debe ser al menos de un día.");
+          setIsStartDateSelected(false); // Reinicia la selección
+          alert("deber ser mayor a un dia")
+      } else {
+          // Si el rango es válido
+          setRangeMessage(`Rango seleccionado: ${startDate.toLocaleDateString()} - ${endDate.toLocaleDateString()}`);
+          setIsStartDateSelected(false); // Reinicia para futuras selecciones
+          setContextMenuPosition(false); // Cierra el modal o menú contextual
       }
-    };
-  
+  }
+};
+
+
     const getClassNameForDate = (date) => {
       const { startDate, endDate } = state[0];
       
