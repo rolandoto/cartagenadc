@@ -59,7 +59,7 @@ const FormCheckout=({Country,handleSubmit,loading,formErrors,handleChange,formVa
                         <h2 className="text-xl font-bold mb-4">Resumen de tu reserva</h2>
                             <div className="mb-4">
                                 <h3 className="text-lg font-semibold">{FillContent()}</h3>
-                                <p className="text-gray-600">CLL 47 # 45 - 47 Medellín, Colombia</p>
+                                <p className="text-gray-600">Tv. 54 #30B 67, El Rubí, Cartagena dc, Cartagena de Indias, Provincia de Cartagena, Bolívar</p>
                             </div>
                             {cart.map((itemCardRoom,e) =>(
                             <CardCheckout key={e}   {...itemCardRoom} />

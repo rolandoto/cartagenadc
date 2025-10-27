@@ -313,22 +313,29 @@ const subtotal = getCartSubtotal()
         <div>
           {FillContent}
            <Header  scrollToRoomSectionEvent={scrollToRoomSectionEvent}   />
-              <div className="relative bg-cover bg-center h-[650px]" style={{ 
-                    backgroundImage: `url(https://github.com/rolandoto/image-pms/blob/main/_MG_4223.jpg?raw=true)`,}}>
-                <div className="absolute inset-0 bg-black opacity-50"></div>
-                <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white">
-                    <h1 className="text-4xl md:text-6xl lg:text-6xl font-lora">
-                      {loadingHotel ?"cargando " :hotel?.nombre}  
-                    </h1>
-                    <p className="mt-2 text-base md:text-xl lg:text-3xl font-lora font-normal">
-                        Ideal para negocios o placer, con piscina para tu relax.
-                    </p>
-                    <button className="mt-6 bg-yellow-500 text-white px-6 py-3 rounded-lg hover:bg-yellow-500" onClick={scrollToRoomSection}>
-                        Ver habitaciones
-                    </button>
-                </div>
-            </div>
+           
+            <div className="relative bg-cover bg-center  h-[650px]" style={{ 
+                backgroundImage: `url(https://github.com/rolandoto/image-pms/blob/main/_MG_4223.jpg?raw=true)`,}}>
+              <div className="absolute inset-0  bg-black opacity-30  "></div>
+              <div className="relative lg:p-4 p-4 text-center max-w-5xl m-auto z-10 flex flex-col items-initial justify-center h-[560px]  text-white">
+                  <h1 className="text-4xl text-center  md:text-6xl lg:text-6xl font-lora">
+                      {FillContent()}
+                  </h1>
+                  <h2 className="mt-2  text-center text-base md:text-xl lg:text-3xl font-lora font-normal">
+                  Ideal para negocios o placer, con piscina para tu relax.
+                  </h2>
+                  <div className="w-full flex justify-center" >
+                      <button className="mt-6 bg-yellow-500 text-white px-6 py-3 rounded-lg hover:bg-yellow-500" onClick={scrollToRoomSection}>
+                          Ver habitaciones
+                      </button>
+                  </div>
+              </div>
+          </div>
 
+
+            
+                
+           
             <CalenderSearchHome HandClickMenuPeople={HandClickMenuPeople} 
                                  formattedStartDateToString={formattedStartDateToString}
                                  formattedEndDateToString={formattedEndDateToString}

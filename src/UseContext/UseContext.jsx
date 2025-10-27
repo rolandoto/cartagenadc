@@ -58,7 +58,7 @@ const handleSelect = (ranges) => {
           startDate,
           endDate,
           key: 'selection',
-          color: startDate && endDate ? 'black' : 'transparent',
+          color: startDate && endDate ? '#eab308' : 'transparent',
       },
   ]);
 
