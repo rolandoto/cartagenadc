@@ -18,14 +18,13 @@ import PanelPromotion from './Page/PanelPromotion/PanelPromotion';
 import PanelHotelPromotion from './Page/PanelHotelPromotion/PanelHotelPromotion';
 import UpdateEvents from './Page/UpdateEvents/UpdateEvents';
 
-
 function App() {
   return (
     <Provider  store={store}>
       <AutoProvider>
       <BrowserRouter> 
           <Routes>
-              <Route exact path="/" element={<Home/> } />
+              <Route exact path="/" element={<Accommodation/> } />
               <Route exact path="/Accomodation" element={<Accommodation/> } />
               <Route exact path="/Checkout" element={<Checkout/> } />
               <Route exact path="/Events" element={<EventsNext />} />
@@ -39,7 +38,6 @@ function App() {
               <Route  exact path="/PanelPromotion/:id" element={<PanelPromotion />} />
               <Route  exact path="/PanelHotelPromotion" element={<PanelHotelPromotion />} />
               <Route  exact path="/Somethingwrong" element={<Somethingwrong />} />
-             
               <Route path='/*'  element={<NoFound/> } />
           </Routes> 
       </BrowserRouter>
